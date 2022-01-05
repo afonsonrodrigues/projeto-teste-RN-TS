@@ -1,10 +1,12 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import {View} from 'react-native';
+import Botao from './src/components/botao';
 
-const App: React.FC = () => {
+const App = () => {
   return (
     <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-      <Text>APP</Text>
+      <Botao titulo="Botao 1" />
+      <Botao titulo="Botao 2" />
     </View>
   );
 };
