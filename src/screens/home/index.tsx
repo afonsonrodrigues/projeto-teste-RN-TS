@@ -5,6 +5,8 @@ import ItemEstado from '../../components/itemEstado';
 import api from '../../services/api';
 import {IEstado} from '../../types';
 
+import {Container} from './styles';
+
 const Home: React.FC = () => {
   const [estados, setEstados] = useState<IEstado[]>([]);
   const navigation: void | any = useNavigation();
@@ -22,7 +24,7 @@ const Home: React.FC = () => {
   }, []);
 
   return (
-    <SafeAreaView style={styles.container}>
+    <Container>
       <FlatList<IEstado>
         style={{flex: 1}}
         showsVerticalScrollIndicator={false}
@@ -34,7 +36,7 @@ const Home: React.FC = () => {
           );
         }}
       />
-    </SafeAreaView>
+    </Container>
   );
 };
 
