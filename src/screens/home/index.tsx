@@ -1,11 +1,11 @@
 import {useNavigation} from '@react-navigation/native';
 import React, {useEffect, useState} from 'react';
-import {FlatList, SafeAreaView, StyleSheet} from 'react-native';
+import {FlatList} from 'react-native';
 import ItemEstado from '../../components/itemEstado';
 import api from '../../services/api';
 import {IEstado} from '../../types';
 
-import {Container} from './styles';
+import {Container} from '../../globalStyled';
 
 const Home: React.FC = () => {
   const [estados, setEstados] = useState<IEstado[]>([]);
@@ -39,13 +39,5 @@ const Home: React.FC = () => {
     </Container>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    backgroundColor: '#eee',
-  },
-});
 
 export default Home;

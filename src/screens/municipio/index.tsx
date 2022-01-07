@@ -1,9 +1,11 @@
 import {useNavigation, useRoute} from '@react-navigation/native';
 import React, {useEffect, useState} from 'react';
-import {FlatList, SafeAreaView, StyleSheet} from 'react-native';
+import {FlatList} from 'react-native';
 import ItemMunicipio from '../../components/itemMunicipio';
 import api from '../../services/api';
 import {IMunicipio, IParams} from '../../types';
+
+import {Container} from '../../globalStyled';
 
 const Municipio: React.FC = () => {
   const route = useRoute();
@@ -22,7 +24,7 @@ const Municipio: React.FC = () => {
   }, []);
 
   return (
-    <SafeAreaView style={styles.container}>
+    <Container>
       <FlatList<IMunicipio>
         style={{flex: 1}}
         showsVerticalScrollIndicator={false}
@@ -32,16 +34,8 @@ const Municipio: React.FC = () => {
           return <ItemMunicipio item={item} />;
         }}
       />
-    </SafeAreaView>
+    </Container>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    backgroundColor: '#eee',
-  },
-});
 
 export default Municipio;

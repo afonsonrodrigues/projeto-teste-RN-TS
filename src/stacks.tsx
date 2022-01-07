@@ -6,6 +6,8 @@ import {NavigationContainer} from '@react-navigation/native';
 import Home from './screens/home';
 import Municipio from './screens/municipio';
 
+import {ThemeProvider} from 'styled-components';
+
 const Stack = createNativeStackNavigator();
 
 const Stacks = () => {
